@@ -27,7 +27,10 @@
     <ClCompile Include="Date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DateDemo.cpp">
+    <ClCompile Include="FeetInches.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LandTract.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,7 +47,10 @@
     <ClInclude Include="Date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DateDemo.h">
+    <ClInclude Include="FeetInches.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LandTract.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

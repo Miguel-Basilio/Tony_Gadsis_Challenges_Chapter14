@@ -26,42 +26,24 @@ Date::Date(int yyyy, int mm, int dd)
     setDay(dd);
 }
 
-/* **********************************************************
-            Date::setYear() : int
-    If the argument passed to the setYear function is greater
-    than or equal to 1900 and less than or equal to 2020, it
-    is copied into the 'year' member. If it is not, the value
-    of year is set to 1900.
-    ********************************************************** */
+          //  Date::setYear() : int
 
 void Date::setYear(int yyyy)
 {
     yyyy >= 1900 && yyyy <= 2022 ? year = yyyy : year = 1900;
 }
 
-/* **********************************************************
-            Date::setMonth() : int
-    If the argument passed to the setMonth function is greater
-    than or equal to JANUARY and lower than or equal to
-    DECEMBER, it is copied into the member variable month. If
-    it is not, the month value is set to 1.
-    ********************************************************** */
+
+           // Date::setMonth() : int
+
 
 void Date::setMonth(int mm)
 {
     mm >= JANUARY && mm <= DECEMBER ? month = mm : month = 1;
 }
 
-/* **********************************************************
-            Date::setDay() : int
-    If the argument passed to the setDay function is greater
-    than 1 and less than or equal to daysPerMonth (ex: April
-    has 30 days), it is assigned to the day member variable.
-    If it is a leap year, days is set to 29, else 28 is set.
-    If neither of these conditions are met, day is set to 1.
-    Else, if the value dd is in the valid range, its value is
-    assigned ot the day member variable.
-    ********************************************************** */
+        //    Date::setDay() : int
+
 
 void Date::setDay(int dd)
 {
@@ -84,11 +66,9 @@ void Date::setDay(int dd)
     }
 }
 
-/* **********************************************************
-            Date::isLeapYear()
-    This function determines whether a year is a leap year. If
-    it is true is returned, else it returns false.
-    ********************************************************** */
+
+          //  Date::isLeapYear()
+
 
 bool Date::isLeapYear() const
 {
@@ -99,11 +79,9 @@ bool Date::isLeapYear() const
     return false;
 }
 
-/* **********************************************************
-            Date::helpIncrement()
-    This helper function determines whether the day, day and
-    month, or day month and year values should be incremented.
-    ********************************************************** */
+          //  Date::helpIncrement(): This helper function determines whether the day, day and
+           //month, or day month and year values should be incremented.
+
 
 void Date::helpIncrement()
 {
@@ -133,9 +111,8 @@ void Date::helpIncrement()
     }
 }
 
-/* **********************************************************
-            Date &Date::operator++() : Prefix ++
-   ********************************************************** */
+            //Date &Date::operator++() : Prefix ++
+  
 
 Date& Date::operator++()
 {
@@ -144,9 +121,9 @@ Date& Date::operator++()
     return *this;
 }
 
-/* **********************************************************
-            Date Date::operator++(int) : Postfix ++
-   ********************************************************** */
+
+           // Date Date::operator++(int) : Postfix ++
+ 
 
 Date Date::operator++(int)
 {
@@ -158,12 +135,8 @@ Date Date::operator++(int)
     return tempDate;
 }
 
-/* **********************************************************
-            Date::helpDecrement()
-    This helper function determines whether year or month
-    should be decremented. If a condition is met, the day and
-    month member variables are set accordingly.
-    ********************************************************** */
+
+          //  Date::helpDecrement(): This helper function determines whether year or month should be decremented. 
 
 void Date::helpDecrement()
 {
@@ -196,9 +169,8 @@ void Date::helpDecrement()
     }
 }
 
-/* **********************************************************
-            Date Date::operator--() : Prefix --
-   ********************************************************** */
+//      Date Date::operator--() : Prefix --
+
 
 Date& Date::operator--()
 {
@@ -214,9 +186,9 @@ Date& Date::operator--()
     return *this;
 }
 
-/* **********************************************************
-            Date Date::operator--(int) : Postfix --
-   ********************************************************** */
+
+           // Date Date::operator--(int) : Postfix --
+
 
 Date Date::operator--(int)
 {
@@ -234,12 +206,8 @@ Date Date::operator--(int)
     return tempDate;
 }
 
-/* **********************************************************
-            Date::calcJulianDate() : const Date &
-    This function calculates the Julian dates for two date
-    objects. (The formula used for calculation can be found in
-    the Wiki-Article: Julian day)
-    ********************************************************** */
+
+         //   Date::calcJulianDate() : calculates the Julian dates for two date  objects.
 
 int Date::calcJulianDate(const Date& dateOne)
 {
@@ -251,9 +219,9 @@ int Date::calcJulianDate(const Date& dateOne)
     return julianDate;
 }
 
-/* **********************************************************
-            bool Date::operator >() : Greater
-    ********************************************************** */
+
+           // bool Date::operator >() : Greater
+
 
 bool Date::operator >(const Date& right)
 {
@@ -275,9 +243,8 @@ bool Date::operator >(const Date& right)
     return false;
 }
 
-/* **********************************************************
-            Date Date::operator -() : Binary -
-    ********************************************************** */
+          //  Date Date::operator -() : Binary -
+  
 
 Date Date::operator-(const Date& right)
 {
@@ -303,9 +270,9 @@ Date Date::operator-(const Date& right)
     return temp;
 }
 
-/* **********************************************************
-            Date Date::operator >> () : Extraction operator
-   ********************************************************** */
+
+           // Date Date::operator >> () : Extraction operator
+
 
 istream& operator >> (istream& strm, Date& obj)
 {
@@ -324,19 +291,14 @@ istream& operator >> (istream& strm, Date& obj)
     return strm;
 }
 
-/* **********************************************************
-            Date Date::operator << () : Insertion operator
-   ********************************************************** */
-
+           // Date Date::operator << () : Insertion operator
+  
 ostream& operator << (ostream& strm, const Date& obj)
 {
     return strm << obj.monthNames[obj.month] << " " << obj.day << ", " << obj.year;
 }
 
-/* **********************************************************
-            Date::printFormatOne()
-    This function outputs the date as 12/12/2012.
-    ********************************************************** */
+
 
 void Date::printFormatOne()
 {
@@ -344,10 +306,7 @@ void Date::printFormatOne()
     cout << month << "/" << day << "/" << year;
 }
 
-/* **********************************************************
-            Date::printFormatTwo (void)
-    This function outputs the date as DECEMBER 12, 2012
-    ********************************************************** */
+
 
 void Date::printFormatTwo()
 {
@@ -355,10 +314,7 @@ void Date::printFormatTwo()
     std::cout << monthNames[month] << " " << day << ", " << year;
 }
 
-/* **********************************************************
-            Date::printFormatThree (void)
-    This function outputs the date as 12 DECEMBER, 2012
-    ********************************************************** */
+
 
 void Date::printFormatThree()
 {

@@ -20,16 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Date.cpp" />
-    <ClCompile Include="DateDemo.cpp" />
     <ClCompile Include="DayOfYear.cpp" />
+    <ClCompile Include="FeetInches.cpp" />
+    <ClCompile Include="LandTract.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Month.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h" />
-    <ClInclude Include="DateDemo.h" />
     <ClInclude Include="DayOfYear.h" />
+    <ClInclude Include="FeetInches.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="LandTract.h" />
     <ClInclude Include="Month.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
